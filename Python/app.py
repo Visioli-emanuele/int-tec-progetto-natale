@@ -17,8 +17,8 @@ app = Flask(__name__)
 app.secret_key = 'xyzsdfg'
 
 def connection():
-    conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',
-                           user='franzetti.giulio', password='WWWWS7sN', database='franzetti.giulio'')
+    conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',user='franzetti.giulio', password='WWWWS7sN', database='franzetti.giulio')
+
     return conn
 
 
@@ -36,7 +36,7 @@ def exams():
     # Create a cursor
     cur = conn.cursor(as_dict=True)
     # Execute the SQL SELECT statement
-    cur.execute("SELECT * FROM verificaTec")
+    cur.execute("SELECT * FROM Progetto.verifica")
     # Fetch all rows from the SELECT statement
     list_users = cur.fetchall()
     # Render the index.html template and pass the list of students
@@ -47,13 +47,3 @@ def exams():
     #return json.dumps(list_users)
     resp = json_util.dumps(list_users)
     return Response(resp, mimetype = 'application/json')
-flask
-Flask-MySQLdb
-pymongo
-flask_cors
-flask_restful 
-pyodbc
-pandas
-pymssql
-psycopg2
-#bson == 0.5.10
