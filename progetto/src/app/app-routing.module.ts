@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'download', component: DownloadComponent },
   { path: 'upload', component: UploadComponent },
-  { path: 'transzione', component: TransizioneComponent },
+  { path: 'transizione', component: TransizioneComponent },
   { path: '',   redirectTo: '', pathMatch: 'full' }
 ];
 
